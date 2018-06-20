@@ -67,7 +67,7 @@ class Block//默认包含16个Node
 
 	private:
 		void Return(Node <Node <T> *> *i){//将某节点设定为空闲
-			i->data = 0;
+			i->data->data = 0;
 			pnode.Push_back(i->data);
 			L->Push_back(i->data);
 			pnode.Delete(i);

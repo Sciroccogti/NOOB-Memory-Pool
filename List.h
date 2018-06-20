@@ -147,7 +147,7 @@ public:
 		Node<T>* p=tail;
 		for(int i=0;i<=app_num;++i)
 		{
-			this->Push_back(0);
+			this->Push_back((T)0);
 		}
 		if(!p){
 			p = head;
