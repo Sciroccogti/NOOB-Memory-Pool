@@ -15,7 +15,7 @@ List测试.cpp为编写时辅助组件，不被包含在项目里
 张逸帆主要负责Block及主要的Debug等部分
 
 * 原理：\
-	最小存储单位为Node\
+最小存储单位为Node\
 	List用于管理空闲Node\
 	Block用于使用Node\
 	Pool用于管理Block
