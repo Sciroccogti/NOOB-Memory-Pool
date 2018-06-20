@@ -26,32 +26,7 @@ public:
 			tail->next=NULL;
 		}
 	}
-	
-	Node<T>* Gethead()
-	{
-		return head;
-	}
-	Node<T>* Gettail()
-	{
-		return tail;
-	}
-	void Push_back(Node<T>* newnode)
-	{
-		if (!head)
-		{
-			head = newnode;
-			tail = newnode;
-			head->prev = NULL;
-			head->next = NULL;
-		}
-		else
-		{
-			tail->next = newnode;
-			newnode->prev = tail;
-			tail = newnode;
-			tail->next = NULL;
-		}
-	}
+
 	void Push_back(const T& info)
 	{
 		if(!head)
@@ -72,56 +47,25 @@ public:
 			tail->next=NULL;
 		}
 	}
-	
-	void Pop_back()
+		
+	void Push_back(Node<T>* newnode)
 	{
-		if(!head){}
-		else
+		if (!head)
 		{
-			Node<T>* p=tail;
-			tail=tail->prev;
-			delete p;
-			if(tail)
-			{
-				tail->next=NULL;
-			}
-		}
-	}
-	
-	void Push_front(const T& info)
-	{
-		if(head)
-		{
-			head->prev=new Node<T>;
-			head=head->prev;
-			head->data=info;
-			head->prev=NULL;
+			head = newnode;
+			tail = newnode;
+			head->prev = NULL;
+			head->next = NULL;
 		}
 		else
 		{
-			head=new Node<T>;
-			tail=head;
-			head->prev=NULL;
-			head->next=NULL;
-			head->data=info;
+			tail->next = newnode;
+			newnode->prev = tail;
+			tail = newnode;
+			tail->next = NULL;
 		}
 	}
-	
-	void Pop_front()
-	{
-		if(!head){}
-		else
-		{
-			Node<T>* p=head;
-			head=head->next;
-			delete p;
-			if(head)
-			{
-				head->prev=NULL;
-			}
-		}
-	}
-	
+
 	void Delete(Node<T>* target)
 	{
 		if (target == head)
@@ -182,5 +126,56 @@ public:
 protected:
 	Node<T>* head;
 	Node<T>* tail;		
+
+private:
+	void Pop_front()
+	{
+		if(!head){}
+		else
+		{
+			Node<T>* p=head;
+			head=head->next;
+			delete p;
+			if(head)
+			{
+				head->prev=NULL;
+			}
+		}
+	}
+
+	void Pop_back()
+	{
+		if(!head){}
+		else
+		{
+			Node<T>* p=tail;
+			tail=tail->prev;
+			delete p;
+			if(tail)
+			{
+				tail->next=NULL;
+			}
+		}
+	}
+	
+	void Push_front(const T& info)
+	{
+		if(head)
+		{
+			head->prev=new Node<T>;
+			head=head->prev;
+			head->data=info;
+			head->prev=NULL;
+		}
+		else
+		{
+			head=new Node<T>;
+			tail=head;
+			head->prev=NULL;
+			head->next=NULL;
+			head->data=info;
+		}
+	}
+
 };
 #endif
