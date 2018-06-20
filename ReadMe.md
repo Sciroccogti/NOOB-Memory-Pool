@@ -25,6 +25,6 @@
 	删除时，将该Node清空并连接至Block尾部，插入List\
 	某Block使用完后，Pool会再建立新Block
 
-	参考资料：
-	https://www.ibm.com/developerworks/cn/linux/l-cn-ppp/index6.html
+	参考资料：\
+	https://www.ibm.com/developerworks/cn/linux/l-cn-ppp/index6.html \
 	https://blog.csdn.net/K346K346/article/details/49538975
