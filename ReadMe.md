@@ -16,9 +16,9 @@ List测试.cpp为编写时辅助组件，不被包含在项目里
 
 * 原理：\
 最小存储单位为Node\
-	List用于管理空闲Node\
-	Block用于使用Node\
-	Pool用于管理Block
+List用于管理空闲Node\
+Block用于使用Node\
+Pool用于管理Block
 	
 	Block在建立时，要求List申请并提供Node\
 	存储时，寻找有空余Node的Block，将数据写入并从List中引出该Node\
